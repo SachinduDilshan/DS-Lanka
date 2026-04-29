@@ -5,19 +5,19 @@ import { FaLinkedinIn, FaTwitter, FaDribbble } from "react-icons/fa";
 
 const team = [
   {
-    name: "Sithara Dissanayaka",
+    name: "Alex Rivera",
     role: "Founder & CEO",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
   },
   {
-    name: "Sithara Dissanayakam",
+    name: "Sarah Kim",
     role: "Creative Director",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
   },
   {
-    name: "Sachindu Dilshan",
+    name: "Marcus Chen",
     role: "Lead Developer",
     image: "https://randomuser.me/api/portraits/men/67.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
@@ -44,17 +44,17 @@ export default function Team() {
   }, []);
 
   return (
-    <section id="team" ref={ref} className="py-28 bg-dark-2 relative overflow-hidden">
+    <section id="team" ref={ref} className="py-16 md:py-28 bg-dark-2 relative overflow-hidden">
       <div className="absolute right-0 top-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <div className="reveal">
-            <span className="tag mb-5 inline-block">Our People</span>
+            <span className="tag mb-4 inline-block">Our People</span>
           </div>
           <h2
-            className="reveal font-heading font-extrabold text-4xl md:text-5xl text-light leading-[1.12]"
+            className="reveal font-heading font-extrabold text-3xl md:text-5xl text-light leading-[1.12]"
             style={{ transitionDelay: "0.15s" }}
           >
             Meet the{" "}
@@ -63,7 +63,7 @@ export default function Team() {
             </span>
           </h2>
           <p
-            className="reveal text-muted font-body text-lg leading-relaxed mt-4"
+            className="reveal text-muted font-body text-sm md:text-lg leading-relaxed mt-3 md:mt-4"
             style={{ transitionDelay: "0.25s" }}
           >
             50+ talented creatives and engineers united by a passion for
@@ -71,57 +71,56 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Team Grid — 2x2 on mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {team.map((member, i) => (
             <div
               key={i}
-              className="reveal group relative bg-dark-card border border-white/6 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_70px_rgba(0,0,0,0.6)]"
+              className="reveal group relative bg-dark-card border border-white/6 rounded-xl md:rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_70px_rgba(0,0,0,0.6)]"
               style={{ transitionDelay: `${0.1 * i}s` }}
             >
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              {/* Image — shorter on mobile */}
+              <div className="relative h-40 sm:h-48 md:h-64 overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent" />
 
-                {/* Social links — slide up on hover */}
-                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
+                {/* Social links — slide up on hover (hidden on mobile touch) */}
+                <div className="absolute bottom-3 left-0 right-0 hidden md:flex justify-center gap-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
                   <a
                     href={member.socials.linkedin}
-                    className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
+                    className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
                     aria-label="LinkedIn"
                   >
-                    <FaLinkedinIn size={14} />
+                    <FaLinkedinIn size={12} />
                   </a>
                   <a
                     href={member.socials.twitter}
-                    className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
+                    className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
                     aria-label="Twitter"
                   >
-                    <FaTwitter size={14} />
+                    <FaTwitter size={12} />
                   </a>
                   <a
                     href={member.socials.dribbble}
-                    className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
+                    className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
                     aria-label="Dribbble"
                   >
-                    <FaDribbble size={14} />
+                    <FaDribbble size={12} />
                   </a>
                 </div>
               </div>
 
               {/* Info */}
-              <div className="p-5">
-                <h3 className="font-heading font-bold text-light text-lg group-hover:text-white transition-colors">
+              <div className="p-3 md:p-5">
+                <h3 className="font-heading font-bold text-sm md:text-lg text-light group-hover:text-white transition-colors leading-tight">
                   {member.name}
                 </h3>
-                <p className="text-primary text-sm font-body font-medium mt-0.5">
+                <p className="text-primary text-xs md:text-sm font-body font-medium mt-0.5">
                   {member.role}
                 </p>
               </div>
@@ -130,11 +129,11 @@ export default function Team() {
         </div>
 
         {/* Join CTA */}
-        <div className="reveal text-center mt-14" style={{ transitionDelay: "0.4s" }}>
-          <p className="text-muted font-body mb-5">
+        <div className="reveal text-center mt-10 md:mt-14" style={{ transitionDelay: "0.4s" }}>
+          <p className="text-muted font-body text-sm mb-4 md:mb-5">
             Think you'd be a great fit?
           </p>
-          <a href="#contact" className="btn-outline">
+          <a href="#contact" className="btn-outline text-sm py-2.5 px-5 md:py-3.5 md:px-7">
             Join Our Team
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -52,21 +52,21 @@ export default function Footer() {
   return (
     <footer className="bg-dark-2 border-t border-white/5">
       {/* CTA Band */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-primary/20 via-primary/10 to-accent/15 border-b border-white/5 py-16 px-6">
+      <div className="relative overflow-hidden bg-gradient-to-r from-primary/20 via-primary/10 to-accent/15 border-b border-white/5 py-10 md:py-16 px-4 sm:px-6">
         <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="font-heading font-extrabold text-3xl md:text-5xl text-light mb-5 leading-tight">
+          <h2 className="font-heading font-extrabold text-2xl md:text-5xl text-light mb-3 md:mb-5 leading-tight">
             Ready to Start Your{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Next Project?
             </span>
           </h2>
-          <p className="text-muted font-body text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-muted font-body text-sm md:text-lg mb-6 md:mb-8 max-w-xl mx-auto">
             Let's talk about how Digital Solutions can help you achieve your digital goals.
           </p>
-          <a href="#contact" className="btn-primary text-base px-9 py-4">
+          <a href="#contact" className="btn-primary text-sm md:text-base px-6 md:px-9 py-3 md:py-4">
             Start a Conversation
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
@@ -74,51 +74,50 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Brand col */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="mb-5 block w-fit">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
+          {/* Brand col — full width on mobile */}
+          <div className="col-span-2 md:col-span-4 lg:col-span-2">
+            <Link href="/" className="mb-4 block w-fit">
               <Image
                 src="/logo.png"
                 alt="Digital Solutions Lanka"
                 width={100}
                 height={60}
-                className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+                className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
               />
             </Link>
-            <p className="text-muted font-body text-sm leading-relaxed max-w-xs mb-7">
+            <p className="text-muted font-body text-xs md:text-sm leading-relaxed max-w-xs mb-5 md:mb-7">
               A full service creative digital agency crafting bold brands,
-              scalable software products, and growth focused digital experiences since
-              2026.
+              scalable software products, and growth focused digital experiences since 2026.
             </p>
             {/* Socials */}
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {socials.map((s, i) => (
                 <a
                   key={i}
                   href={s.href}
                   aria-label={s.label}
-className={`w-9 h-9 rounded-xl bg-dark-card border border-white/8 flex items-center justify-center text-muted hover:text-white transition-all duration-300 ${s.hover}`}
+                  className={`w-8 h-8 md:w-9 md:h-9 rounded-xl bg-dark-card border border-white/8 flex items-center justify-center text-muted hover:text-white transition-all duration-300 ${s.hover}`}
                 >
-                  <s.icon size={14} />
+                  <s.icon size={13} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links */}
+          {/* Links — 2-col on mobile, individual cols on md+ */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-heading font-bold text-light text-sm mb-5 tracking-wide">
+              <h4 className="font-heading font-bold text-light text-xs md:text-sm mb-3 md:mb-5 tracking-wide">
                 {title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-muted text-sm font-body hover:text-light transition-colors duration-200 hover:translate-x-0.5 inline-block"
+                      className="text-muted text-xs md:text-sm font-body hover:text-light transition-colors duration-200 hover:translate-x-0.5 inline-block"
                     >
                       {link}
                     </a>
@@ -131,8 +130,8 @@ className={`w-9 h-9 rounded-xl bg-dark-card border border-white/8 flex items-cen
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 px-6 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-muted text-xs font-body">
+      <div className="border-t border-white/5 px-4 sm:px-6 py-4 md:py-5">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-muted text-xs font-body">
           <p>© {new Date().getFullYear()} Digital Solutions Lanka. All rights reserved.</p>
           <p>
             Crafted with{" "}

@@ -41,7 +41,7 @@ const services = [
   {
     icon: "📱",
     number: "05",
-    title: "Social Media Management",
+    title: "Social Media",
     desc: "Build your brand presence and engage your audience with consistent, creative, and strategic social media content.",
     tags: ["Content", "Engagement", "Brand Growth"],
     color: "from-orange-500/20 to-amber-500/10",
@@ -72,17 +72,17 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={ref} className="py-28 bg-dark-2 relative overflow-hidden">
+    <section id="services" ref={ref} className="py-16 md:py-28 bg-dark-2 relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <div className="reveal">
-            <span className="tag mb-5 inline-block">What We Do</span>
+            <span className="tag mb-4 inline-block">What We Do</span>
           </div>
           <h2
-            className="reveal font-heading font-extrabold text-4xl md:text-5xl text-light leading-[1.12] mb-5"
+            className="reveal font-heading font-extrabold text-3xl md:text-5xl text-light leading-[1.12] mb-3 md:mb-5"
             style={{ transitionDelay: "0.15s" }}
           >
             Services That{" "}
@@ -91,61 +91,61 @@ export default function Services() {
             </span>
           </h2>
           <p
-            className="reveal text-muted font-body text-lg leading-relaxed"
+            className="reveal text-muted font-body text-sm md:text-lg leading-relaxed"
             style={{ transitionDelay: "0.25s" }}
           >
             Complete digital solutions — from building your online presence to scaling your business with technology and marketing.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid — 2 cols on mobile, 3 on lg */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {services.map((s, i) => (
             <div
               key={i}
-              className={`reveal group relative bg-dark-card border border-white/6 rounded-2xl p-7 transition-all duration-500 ${s.border} hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(0,0,0,0.6)] cursor-pointer overflow-hidden`}
+              className={`reveal group relative bg-dark-card border border-white/6 rounded-xl md:rounded-2xl p-4 md:p-7 transition-all duration-500 ${s.border} hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(0,0,0,0.6)] cursor-pointer overflow-hidden`}
               style={{ transitionDelay: `${0.1 * i}s` }}
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
+                className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl md:rounded-2xl`}
               />
-
-              <div className="absolute inset-0 bg-card-shine rounded-2xl" />
+              <div className="absolute inset-0 bg-card-shine rounded-xl md:rounded-2xl" />
 
               <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <span className="text-3xl text-primary group-hover:scale-110 transition-transform duration-300 inline-block">
+                <div className="flex items-start justify-between mb-3 md:mb-6">
+                  <span className="text-2xl md:text-3xl text-primary group-hover:scale-110 transition-transform duration-300 inline-block">
                     {s.icon}
                   </span>
-                  <span className="font-heading font-black text-5xl text-white/5 group-hover:text-white/8 transition-colors">
+                  <span className="font-heading font-black text-3xl md:text-5xl text-white/5 group-hover:text-white/8 transition-colors">
                     {s.number}
                   </span>
                 </div>
 
-                <h3 className="font-heading font-bold text-xl text-light mb-3 group-hover:text-white transition-colors">
+                <h3 className="font-heading font-bold text-sm md:text-xl text-light mb-1.5 md:mb-3 group-hover:text-white transition-colors leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-muted text-sm font-body leading-relaxed mb-6">
+                <p className="text-muted text-xs md:text-sm font-body leading-relaxed mb-3 md:mb-6 hidden sm:block">
                   {s.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                {/* Tags — hide on smallest mobile, show on sm+ */}
+                <div className="hidden sm:flex flex-wrap gap-1.5 md:gap-2">
                   {s.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="text-xs font-heading font-semibold px-2.5 py-1 rounded-full bg-white/5 text-muted group-hover:bg-white/10 group-hover:text-light transition-all duration-300"
+                      className="text-xs font-heading font-semibold px-2 py-0.5 md:px-2.5 md:py-1 rounded-full bg-white/5 text-muted group-hover:bg-white/10 group-hover:text-light transition-all duration-300"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 flex items-center gap-2 text-muted group-hover:text-primary transition-colors duration-300">
+                <div className="mt-3 md:mt-6 flex items-center gap-1.5 text-muted group-hover:text-primary transition-colors duration-300">
                   <span className="text-xs font-heading font-semibold tracking-wider uppercase">
                     Learn More
                   </span>
                   <svg
-                    className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300"
+                    className="w-3 h-3 md:w-3.5 md:h-3.5 transform group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

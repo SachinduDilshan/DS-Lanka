@@ -21,14 +21,14 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={ref} className="py-28 bg-dark relative overflow-hidden">
+    <section id="about" ref={ref} className="py-16 md:py-28 bg-dark relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Image Side */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          {/* Image Side — compact on mobile */}
           <div className="reveal relative">
-            <div className="relative w-full aspect-[4/5] max-w-md rounded-2xl overflow-hidden glow-ring">
+            <div className="relative w-full aspect-[3/2] sm:aspect-[4/3] lg:aspect-[4/5] max-w-md rounded-2xl overflow-hidden glow-ring mx-auto lg:mx-0">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=750&fit=crop"
                 alt="Our team"
@@ -38,22 +38,22 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent" />
             </div>
             {/* Experience badge */}
-            <div className="absolute -bottom-6 -right-6 bg-dark-card border border-white/10 rounded-2xl p-6 glow-ring">
-              <p className="text-4xl font-heading font-black text-primary">10+</p>
-              <p className="text-sm text-muted font-body mt-1">Years of<br />Excellence</p>
+            <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-2 lg:-right-6 bg-dark-card border border-white/10 rounded-2xl p-4 lg:p-6 glow-ring">
+              <p className="text-3xl lg:text-4xl font-heading font-black text-primary">10+</p>
+              <p className="text-xs lg:text-sm text-muted font-body mt-1">Years of<br />Excellence</p>
             </div>
             {/* Decoration */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 border-2 border-primary/20 rounded-xl" />
-            <div className="absolute -top-2 -left-2 w-20 h-20 border border-primary/10 rounded-xl" />
+            <div className="absolute -top-3 -left-3 lg:-top-4 lg:-left-4 w-16 h-16 lg:w-20 lg:h-20 border-2 border-primary/20 rounded-xl" />
+            <div className="absolute -top-1.5 -left-1.5 lg:-top-2 lg:-left-2 w-16 h-16 lg:w-20 lg:h-20 border border-primary/10 rounded-xl" />
           </div>
 
           {/* Content Side */}
-          <div>
+          <div className="mt-6 lg:mt-0">
             <div className="reveal" style={{ transitionDelay: "0.1s" }}>
-              <span className="tag mb-5 block w-fit">About Us</span>
+              <span className="tag mb-4 block w-fit">About Us</span>
             </div>
             <h2
-              className="reveal font-heading font-extrabold text-4xl md:text-5xl leading-[1.12] text-light mb-6"
+              className="reveal font-heading font-extrabold text-3xl md:text-4xl md:text-5xl leading-[1.12] text-light mb-4 md:mb-6"
               style={{ transitionDelay: "0.2s" }}
             >
               We Turn Bold Ideas Into{" "}
@@ -62,35 +62,35 @@ export default function About() {
               </span>
             </h2>
             <p
-              className="reveal text-muted font-body text-lg leading-relaxed mb-8"
+              className="reveal text-muted font-body text-sm md:text-lg leading-relaxed mb-4 md:mb-8"
               style={{ transitionDelay: "0.3s" }}
             >
               Founded in 2014, Nexin is a full-service digital agency headquartered in New York. We specialize in crafting immersive brand identities, scalable web platforms, and growth-focused digital marketing strategies.
             </p>
             <p
-              className="reveal text-muted font-body leading-relaxed mb-10"
+              className="reveal text-muted font-body text-sm leading-relaxed mb-6 md:mb-10"
               style={{ transitionDelay: "0.35s" }}
             >
               Our multidisciplinary team of 50+ creative professionals combines deep technical expertise with design sensibility to deliver outcomes that move the needle.
             </p>
 
-            {/* Features */}
-            <div className="reveal space-y-5" style={{ transitionDelay: "0.45s" }}>
+            {/* Features — 2 col on mobile */}
+            <div className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 md:gap-5" style={{ transitionDelay: "0.45s" }}>
               {features.map((f, i) => (
-                <div key={i} className="flex gap-4 items-start group">
-                  <div className="w-12 h-12 rounded-xl bg-dark-card border border-white/8 flex items-center justify-center text-xl flex-shrink-0 group-hover:border-primary/40 transition-colors duration-300">
+                <div key={i} className="flex gap-3 items-start group">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-dark-card border border-white/8 flex items-center justify-center text-lg flex-shrink-0 group-hover:border-primary/40 transition-colors duration-300">
                     {f.icon}
                   </div>
                   <div>
-                    <h4 className="font-heading font-bold text-light mb-1">{f.title}</h4>
-                    <p className="text-muted text-sm font-body leading-relaxed">{f.desc}</p>
+                    <h4 className="font-heading font-bold text-light text-sm lg:text-base mb-0.5">{f.title}</h4>
+                    <p className="text-muted text-xs lg:text-sm font-body leading-relaxed">{f.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="reveal mt-10" style={{ transitionDelay: "0.55s" }}>
-              <a href="#contact" className="btn-primary">
+            <div className="reveal mt-7 md:mt-10" style={{ transitionDelay: "0.55s" }}>
+              <a href="#contact" className="btn-primary text-sm py-2.5 px-5 md:text-base md:py-3.5 md:px-7">
                 Start a Project
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
