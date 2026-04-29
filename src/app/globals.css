@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #4F6EF7;       /* Royal blue */
+  --primary-light: #7B93FF; /* Lighter blue */
+  --violet: #C026D3;        /* Deep violet */
+  --violet-light: #E879F9;  /* Soft violet */
+  --dark: #05050D;          /* Near black */
+  --dark-2: #080814;        /* Section bg */
+  --dark-3: #0D0D1F;        /* Subtle bg */
+  --dark-card: #0F0F22;     /* Card bg */
+  --dark-border: #1A1A35;   /* Border color */
+  --muted: #7A7A9A;         /* Muted text */
+  --light: #E8E8FF;         /* Light text */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--primary), var(--violet));
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(79, 110, 247, 0.3);
+  color: #fff;
+}
+
+/* Smooth reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glow ring */
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(79, 110, 247, 0.2),
+    0 0 40px rgba(79, 110, 247, 0.08);
+}
+
+.glow-ring-violet {
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.2),
+    0 0 40px rgba(124, 58, 237, 0.08);
+}
+
+/* Gradient text utility */
+.gradient-text {
+ @apply bg-gradient-to-r from-[#4F6EF7] via-[#A855F7] to-[#E879F9] bg-clip-text text-transparent;
+}
+
+/* Noise overlay */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  @apply inline-flex items-center gap-2
+    bg-gradient-to-r from-[#4F6EF7] to-[#C026D3]
+    text-white font-heading font-semibold
+    px-7 py-3.5 rounded-full
+    transition-all duration-300
+    hover:shadow-[0_0_32px_rgba(79,110,247,0.5)]
+    hover:-translate-y-0.5
+    hover:brightness-110;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2
+    border border-white/10 text-light font-heading font-semibold
+    px-7 py-3.5 rounded-full
+    transition-all duration-300
+    hover:border-[#4F6EF7]/60 hover:text-[#7B93FF]
+    hover:bg-[#4F6EF7]/5
+    hover:shadow-[0_0_20px_rgba(79,110,247,0.15)];
+}
+
+/* ── Tag badge ── */
+.tag {
+  @apply inline-flex items-center gap-1.5
+    text-xs font-heading font-semibold tracking-[0.15em] uppercase
+    text-[#7B93FF] bg-[#4F6EF7]/10 border border-[#4F6EF7]/25
+    px-3.5 py-1.5 rounded-full;
+}
+
+/* ── Card hover ── */
+.card-hover {
+  @apply transition-all duration-300
+    hover:-translate-y-1.5
+    hover:shadow-[0_20px_60px_rgba(0,0,4,0.7)];
+}
