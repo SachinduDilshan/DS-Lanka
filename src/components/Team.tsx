@@ -5,19 +5,19 @@ import { FaLinkedinIn, FaTwitter, FaDribbble } from "react-icons/fa";
 
 const team = [
   {
-    name: "Alex Rivera",
+    name: "Sithara Dissanayaka",
     role: "Founder & CEO",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
   },
   {
-    name: "Sarah Kim",
+    name: "Sithara Dissanayakam",
     role: "Creative Director",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
   },
   {
-    name: "Marcus Chen",
+    name: "Sachindu Dilshan",
     role: "Lead Developer",
     image: "https://randomuser.me/api/portraits/men/67.jpg",
     socials: { linkedin: "#", twitter: "#", dribbble: "#" },
