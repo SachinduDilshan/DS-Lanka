@@ -5,7 +5,7 @@ import Image from "next/image";
 const features = [
   { icon: "🎯", title: "Strategic Vision", desc: "We align your digital presence with long-term business objectives." },
   { icon: "⚡", title: "Fast Delivery", desc: "Agile workflows ensure timely, high-quality outputs every sprint." },
-  { icon: "🔮", title: "Future-Ready", desc: "Tech stacks and strategies built for tomorrow's demands." },
+  { icon: "🔮", title: "Future Ready", desc: "Tech stacks and strategies built for tomorrow's demands." },
 ];
 
 export default function About() {
